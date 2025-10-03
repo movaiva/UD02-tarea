@@ -1,4 +1,5 @@
 from faker import Faker
+import random
 
 fake = Faker()
 
@@ -18,3 +19,8 @@ for codigo, datos in usuarios.items():
     print(f"    Dirección: {datos['direccion']}")
     print(f"    Correo electrónico: {datos['correo']}")
     print(f"    Teléfono: {datos['telefono']}")
+
+num_aleatorio = random.randrange(1, len(usuarios) + 1)
+afortunado = usuarios[num_aleatorio]
+
+print(f"\nEl usuario llamado {afortunado['nombre']} fue el afortunado!")
